@@ -27,6 +27,7 @@ type PhotoList struct {
 		// if extras contains "url_o" these are populated
 		UrlO string `xml:"url_o,attr"`
 
+		Urlz  string `xml:"url_z,attr"`
 		Urll  string `xml:"url_l,attr"`
 		Urlk  string `xml:"url_k,attr"`
 		Url3k string `xml:"url_3k,attr"`
