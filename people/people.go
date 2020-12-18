@@ -16,6 +16,7 @@ type PhotoList struct {
 		Id       string `xml:"id,attr"`
 		Owner    string `xml:"owner,attr"`
 		Secret   string `xml:"secret,attr"`
+		OSecret  string `xml:"o_secret,attr"`
 		Server   string `xml:"server,attr"`
 		Farm     string `xml:"farm,attr"`
 		Title    string `xml:"title,attr"`
@@ -36,74 +37,75 @@ type PhotoList struct {
 		IconServer     string `xml:"icon_server,attr"`
 		OriginalFormat string `xml:"original_format",attr`
 		LastUpdate     string `xml:"last_udpate",attr`
+		/*
+			// Geo - these attributes are provided when extras contains "geo"
+			Latitude  string `xml:"latitude,attr"`
+			Longitude string `xml:"longitude,attr"`
+			Accuracy  string `xml:"accuracy,attr"`
+			Context   string `xml:"context,attr"`
 
-		// Geo - these attributes are provided when extras contains "geo"
-		Latitude  string `xml:"latitude,attr"`
-		Longitude string `xml:"longitude,attr"`
-		Accuracy  string `xml:"accuracy,attr"`
-		Context   string `xml:"context,attr"`
+			// Tags - contains space-separated lists
+			Tags        string `xml:"tags,attr"`
+			MachineTags string `xml:"machine_tags,attr"`
 
-		// Tags - contains space-separated lists
-		Tags        string `xml:"tags,attr"`
-		MachineTags string `xml:"machine_tags,attr"`
+			// Original Dimensions - these attributes are provided
+			// when extras contains "o_dims"
+			OWidth  int `xml:"o_width,attr"`
+			OHeight int `xml:"o_height,attr"`
 
-		// Original Dimensions - these attributes are provided
-		// when extras contains "o_dims"
-		OWidth  int `xml:"o_width,attr"`
-		OHeight int `xml:"o_height,attr"`
+			Views     int    `xml:"views,attr"`
+			Media     string `xml:"media,attr"`
+			PathAlias string `xml:"path_alias,attr"`
 
-		Views     int    `xml:"views,attr"`
-		Media     string `xml:"media,attr"`
-		PathAlias string `xml:"path_alias,attr"`
+			// Square Urls - these attributes are provided when
+			// extras contains "url_sq"
+			UrlSq    string `xml:"url_sq,attr"`
+			HeightSq int    `xml:"height_sq,attr"`
+			WidthSq  int    `xml:"width_sq,attr"`
 
-		// Square Urls - these attributes are provided when
-		// extras contains "url_sq"
-		UrlSq    string `xml:"url_sq,attr"`
-		HeightSq int    `xml:"height_sq,attr"`
-		WidthSq  int    `xml:"width_sq,attr"`
+			// Thumbnail Urls - these attributes are provided
+			// when extras contains "url_t"
+			UrlT    string `xml:"url_t,attr"`
+			HeightT int    `xml:"height_t,attr"`
+			WidthT  int    `xml:"width_t,attr"`
 
-		// Thumbnail Urls - these attributes are provided
-		// when extras contains "url_t"
-		UrlT    string `xml:"url_t,attr"`
-		HeightT int    `xml:"height_t,attr"`
-		WidthT  int    `xml:"width_t,attr"`
+			// Q Urls - these attributes are provided when
+			// extras contains "url_s"
+			UrlS    string `xml:"url_s,attr"`
+			HeightS int    `xml:"height_s,attr"`
+			WidthS  int    `xml:"width_s,attr"`
 
-		// Q Urls - these attributes are provided when
-		// extras contains "url_s"
-		UrlS    string `xml:"url_s,attr"`
-		HeightS int    `xml:"height_s,attr"`
-		WidthS  int    `xml:"width_s,attr"`
+			// M Urls - these attributes are provided when
+			// extras contains "url_m"
+			UrlM    string `xml:"url_m,attr"`
+			HeightM int    `xml:"height_m,attr"`
+			WidthM  int    `xml:"width_m,attr"`
 
-		// M Urls - these attributes are provided when
-		// extras contains "url_m"
-		UrlM    string `xml:"url_m,attr"`
-		HeightM int    `xml:"height_m,attr"`
-		WidthM  int    `xml:"width_m,attr"`
+			// N Urls - these attributes are provided when
+			// extras contains "url_n"
+			UrlN    string `xml:"url_n,attr"`
+			HeightN int    `xml:"height_n,attr"`
+			WidthN  int    `xml:"width_n,attr"`
 
-		// N Urls - these attributes are provided when
-		// extras contains "url_n"
-		UrlN    string `xml:"url_n,attr"`
-		HeightN int    `xml:"height_n,attr"`
-		WidthN  int    `xml:"width_n,attr"`
+			// Z Urls - these attributes are provided when
+			// extras contains "url_z"
+			UrlZ    string `xml:"url_z,attr"`
+			HeightZ int    `xml:"height_z,attr"`
+			WidthZ  int    `xml:"width_z,attr"`
 
-		// Z Urls - these attributes are provided when
-		// extras contains "url_z"
-		UrlZ    string `xml:"url_z,attr"`
-		HeightZ int    `xml:"height_z,attr"`
-		WidthZ  int    `xml:"width_z,attr"`
+			// C Urls - these attributes are provided when
+			// extras contains "url_c"
+			UrlC    string `xml:"url_c,attr"`
+			HeightC int    `xml:"height_c,attr"`
+			WidthC  int    `xml:"width_c,attr"`
 
-		// C Urls - these attributes are provided when
-		// extras contains "url_c"
-		UrlC    string `xml:"url_c,attr"`
-		HeightC int    `xml:"height_c,attr"`
-		WidthC  int    `xml:"width_c,attr"`
-
-		// L Urls - these attributes are provided when
-		// extras contains "url_l"
-		UrlL    string `xml:"url_l,attr"`
-		HeightL int    `xml:"height_l,attr"`
-		WidthL  int    `xml:"width_l,attr"`
-	} `xml:"photo"`
+			// L Urls - these attributes are provided when
+			// extras contains "url_l"
+			UrlL    string `xml:"url_l,attr"`
+			HeightL int    `xml:"height_l,attr"`
+			WidthL  int    `xml:"width_l,attr"`
+		*/
+	} `xml:"zphoto"`
 }
 
 type PhotoListResponse struct {
