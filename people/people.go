@@ -42,7 +42,9 @@ type PhotoList struct {
 
 			Description    string `xml:"description,attr"`
 			License        string `xml:"license,attr"`
-			DateUpload     string `xml:"date_upload,attr"`
+		*/
+		DateUpload string `xml:"date_upload,attr"`
+		/*
 			DateTaken      string `xml:"date_taken,attr"`
 			OwnerName      string `xml:"owner_name,attr"`
 			IconServer     string `xml:"icon_server,attr"`
