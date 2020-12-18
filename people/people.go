@@ -12,7 +12,7 @@ type PhotoList struct {
 	Pages   int `xml:"pages,attr"`
 	PerPage int `xml:"perpage,attr"`
 	Total   int `xml:"total,attr"`
-	Photo   struct {
+	Photo   []struct {
 		Id       string `xml:"id,attr"`
 		Owner    string `xml:"owner,attr"`
 		Secret   string `xml:"secret,attr"`
@@ -103,7 +103,7 @@ type PhotoList struct {
 		UrlL    string `xml:"url_l,attr"`
 		HeightL int    `xml:"height_l,attr"`
 		WidthL  int    `xml:"width_l,attr"`
-	}
+	} `xml:"photo"`
 }
 
 type PhotoListResponse struct {
