@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	flickErr "gopkg.in/masci/flickr.v2/error"
+	flickErr "github.com/reedwade/flickr/error"
 )
 
 // Interface for Flickr request objects

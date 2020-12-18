@@ -3,8 +3,8 @@ package photos
 import (
 	"testing"
 
-	"gopkg.in/masci/flickr.v2"
-	flickErr "gopkg.in/masci/flickr.v2/error"
+	"github.com/reedwade/flickr"
+	flickErr "github.com/reedwade/flickr/error"
 )
 
 func TestDelete(t *testing.T) {

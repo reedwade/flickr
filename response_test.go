@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"testing"
 
-	flickErr "gopkg.in/masci/flickr.v2/error"
+	flickErr "github.com/reedwade/flickr/error"
 )
 
 func TestFlickrResponse(t *testing.T) {
