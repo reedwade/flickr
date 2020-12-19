@@ -1,11 +1,33 @@
 package people
 
 import (
-	"fmt"
 	"strconv"
 
 	"github.com/reedwade/flickr"
 )
+
+type User struct {
+	NSID     string `xml:"nsid,attr"`
+	Username string `xml:"username"`
+}
+
+type FindByUsernameResponse struct {
+	flickr.BasicResponse
+	User User `xml:"user"`
+}
+
+func FindByUsername(client *flickr.FlickrClient, userName string) (*FindByUsernameResponse, error) {
+	client.Init()
+	client.EndpointUrl = flickr.API_ENDPOINT
+	client.Args.Set("method", "flickr.people.findByUsername")
+	client.Args.Set("username", userName)
+
+	client.OAuthSign()
+
+	response := &FindByUsernameResponse{}
+	err := flickr.DoGet(client, response)
+	return response, err
+}
 
 type PhotoList struct {
 	Page    int `xml:"page,attr"`
@@ -208,7 +230,7 @@ func GetPhotos(client *flickr.FlickrClient,
 		client.Args.Set("extras", opts.Extras)
 	}
 	client.OAuthSign()
-	fmt.Println("client", client)
+	// fmt.Println("client", client)
 
 	response := &PhotoListResponse{}
 	err := flickr.DoGet(client, response)
